@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import AppleWebsite from "../assets/Apple-Website.png";
 import BlenderWebsite from "../assets/blender-website.png";
 import Chopati from "../assets/chopati.png";
-import FigmaDesign from "../assets/Figma-web.png";
+import FigmaDesign from "../assets/figma-web.png";
 import JobPortal from "../assets/jobPortal.png";
 
 const DEFAULT_PARTICLE_COUNT = 12;
