@@ -3,9 +3,8 @@ import { Element } from "react-scroll";
 import { GrMail, GrLocation, GrPhone } from "react-icons/gr";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import emailjs from "emailjs-com";
+import emailjs from "email-js";
 import NotFoundPage from "./NotFoundPage";
-
 
 const Contact = () => {
   const form = useRef();
@@ -15,10 +14,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_8syisf7",   //  service ID
-        "template_is7d7hr",  // template ID
+        "service_8syisf7", //  service ID
+        "template_is7d7hr", // template ID
         form.current,
-        "IcUfMdnHUwehTmV41",  //  public key
+        "IcUfMdnHUwehTmV41", //  public key
       )
       .then(
         (result) => {
@@ -27,7 +26,7 @@ const Contact = () => {
         },
         (error) => {
           alert(" Failed to send message. Try again!");
-        }
+        },
       );
   };
 
@@ -53,13 +52,22 @@ const Contact = () => {
           <GrPhone /> +91-6260379325
         </h2>
         <div className="links flex gap-5 py-4">
-          <a className="md:text-4xl text-3xl hover:text-green-400" href={NotFoundPage}>
+          <a
+            className="md:text-4xl text-3xl hover:text-green-400"
+            href={NotFoundPage}
+          >
             <FaInstagram />
           </a>
-          <a className="md:text-4xl text-3xl hover:text-green-400" href="https://www.linkedin.com/in/md-alfahad-b56a48344/">
+          <a
+            className="md:text-4xl text-3xl hover:text-green-400"
+            href="https://www.linkedin.com/in/md-alfahad-b56a48344/"
+          >
             <FaLinkedin />
           </a>
-          <a className="md:text-4xl text-3xl hover:text-green-400" href="https://github.com/MDAlfahad">
+          <a
+            className="md:text-4xl text-3xl hover:text-green-400"
+            href="https://github.com/MDAlfahad"
+          >
             <FaGithub />
           </a>
         </div>
