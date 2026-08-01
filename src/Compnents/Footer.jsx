@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className='flex justify-center px-10 py-2 bg-green-400 items-center'>
+    <div className="flex justify-center px-10 py-2 bg-green-400 items-center">
       <p>@2025 copyright. All rights reserved</p>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

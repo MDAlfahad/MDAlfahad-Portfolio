@@ -1,12 +1,17 @@
 import React from "react";
-import Image from "../assets/imagev1.0.png";
+import Image from "../assets/myImage.png";
 import { Element } from "react-scroll";
 import { GrDxc, GrArchlinux, GrCode } from "react-icons/gr";
 import RotatingText from "../animation/RotatingText";
 // Import motion from Framer Motion
 import { motion } from "framer-motion";
+import { RiArrowUpDoubleLine } from "react-icons/ri";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const links = [{ id: 1, to: "home", label: "Home" }];
   // Define animation variants for the container.
   // This will allow us to stagger the animation of child elements.
   const containerVariants = {
@@ -28,21 +33,21 @@ const Home = () => {
       transition: { type: "spring", stiffness: 100 },
     },
   };
-  
+
   // A slightly different variant for the image for a different feel
   const imageVariants = {
     hidden: { scale: 0.8, opacity: 0 },
     visible: {
-        scale: 1,
-        opacity: 1,
-        transition: { type: "spring", damping: 15, stiffness: 100 },
-    }
-  }
+      scale: 1,
+      opacity: 1,
+      transition: { type: "spring", damping: 15, stiffness: 100 },
+    },
+  };
 
   return (
     <Element
       name="project" // I think you meant "home" or "about" here, but keeping "project" as in your original code
-      className="md:flex items-center justify-between md:px-5 lg:px-10 z-0 px-4 bg-green-200 min-h-screen w-full overflow-hidden"
+      className="md:flex items-center justify-between md:px-5 lg:px-20 z-0 px-4 bg-green-200 min-h-screen w-full overflow-hidden"
     >
       {/* Motion container for the text content */}
       <motion.div
@@ -54,23 +59,32 @@ const Home = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className="md:text-3xl lg:text-6xl text-4xl font-bold flex gap-5 items-center"
+          className="md:text-3xl lg:text-7xl text-4xl font-bold flex gap-5 items-center"
         >
           Hey I'M
           {/* Added hover effects to icons */}
-          <motion.div whileHover={{ scale: 1.2, rotate: 15 }} transition={{ type: "spring", stiffness: 400 }}>
-             <GrCode className="text-green-400" />
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 15 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <GrCode className="text-green-400" />
           </motion.div>
-          <motion.div whileHover={{ scale: 1.2, rotate: 15 }} transition={{ type: "spring", stiffness: 400 }}>
-             <GrDxc className="text-green-400" />
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 15 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <GrDxc className="text-green-400" />
           </motion.div>
         </motion.h1>
 
         <motion.h1
           variants={itemVariants}
-          className="md:text-3xl lg:text-6xl text-4xl font-bold flex gap-5 items-center mt-4"
+          className="md:text-3xl lg:text-7xl text-4xl font-bold flex gap-5 items-center mt-4"
         >
-          <motion.div whileHover={{ scale: 1.2, rotate: -15 }} transition={{ type: "spring", stiffness: 400 }}>
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: -15 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
             <GrArchlinux className="text-green-400" />
           </motion.div>
           MD ALFAHAD
@@ -105,16 +119,17 @@ const Home = () => {
         {/* Refined the paragraph text for better flow */}
         <motion.p
           variants={itemVariants}
-          className="md:text-[16px] flex mt-5 max-w-[500px] items-center text-gray-700"
+          className="md:text-[16px] flex mt-5 max-w-[800px] items-center text-gray-700"
         >
-          Passionate about my craft, I'm driven by a deep curiosity that
-          pushes me to explore the depths of technology and create innovative solutions.
+          Passionate about my craft, I'm driven by a deep curiosity that pushes
+          me to explore the depths of technology and create innovative
+          solutions.
         </motion.p>
       </motion.div>
 
       {/* Motion container for the image */}
       <motion.div
-        className="photo px-5"
+        className="photo "
         variants={imageVariants}
         initial="hidden"
         whileInView="visible"
@@ -122,13 +137,17 @@ const Home = () => {
       >
         {/* Added a subtle hover effect to the image */}
         <motion.img
-          className="lg:h-[95vh] w-full object-contain"
+          className="lg:h-[80vh] w-full object-contain mr-20"
           src={Image}
           alt="MD Alfahad"
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 200, damping: 10 }}
         />
       </motion.div>
+
+      {/* <button className="fixed right-5 p-2 bottom-10 bg-black/40 rounded-xl text-white backdrop-blur-lg">
+        <RiArrowUpDoubleLine size={30} />
+      </button> */}
     </Element>
   );
 };

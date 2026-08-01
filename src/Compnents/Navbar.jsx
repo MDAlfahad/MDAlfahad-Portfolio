@@ -1,8 +1,7 @@
 import { Link } from "react-scroll";
 import { FaDownload, FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
-import Download from "../assets/MDAlfahadResume.pdf"; // Make sure this path is correct
-
+import Download from "../assets/MDAlfahad_Resume.pdf"; // Make sure this path is correct
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
@@ -18,7 +17,12 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-4 py-3 md:px-8">
         {/* Logo */}
         <div className="logo text-2xl md:text-3xl font-bold text-gray-800 tracking-wider">
-          <Link to="home" smooth={true} duration={500} className="cursor-pointer">
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            className="cursor-pointer"
+          >
             ALFAHAD
           </Link>
         </div>

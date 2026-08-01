@@ -1,9 +1,10 @@
 import { useRef, useEffect, useCallback, useState } from "react";
 import { gsap } from "gsap";
 import AppleWebsite from "../assets/Apple-Website.png";
-import BlenderWebsite from '../assets/blender-website.png'
-import Chopati from '../assets/chopati.png'
+import BlenderWebsite from "../assets/blender-website.png";
+import Chopati from "../assets/chopati.png";
 import FigmaDesign from "../assets/Figma-web.png";
+import JobPortal from "../assets/jobPortal.png";
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
@@ -18,7 +19,7 @@ const cardData = [
     title: "UI Design",
     description: "Figma design for modern web applications",
     label: "Figma Design",
-    link: "https://www.figma.com/design/Jq92cZUmooMixB89Cod0uJ/Designs?node-id=0-1&t=V0u6wcqHQt34rE0k-1", 
+    link: "https://www.figma.com/design/Jq92cZUmooMixB89Cod0uJ/Designs?node-id=0-1&t=V0u6wcqHQt34rE0k-1",
   },
   {
     backgroundImage: `url(${BlenderWebsite})`,
@@ -32,10 +33,16 @@ const cardData = [
     title: "Website",
     description: "Complete Apple Website Frontend",
     label: "Apple Website",
-    link: "https://mdalfahad.github.io/Apple-Website/", 
+    link: "https://mdalfahad.github.io/Apple-Website/",
   },
   {
-    
+    backgroundImage: `url(${JobPortal})`,
+    title: "full Stack Project",
+    description: "Job portal where use can find their jobs and Internships",
+    label: "Job-Portal-Website",
+    link: "https://jobportaledu.vercel.app",
+  },
+  {
     backgroundImage: `url(${Chopati})`,
     title: "Complete Website",
     description: "Smart Chaupati Management System",
@@ -106,8 +113,8 @@ const ParticleCard = ({
       createParticleElement(
         Math.random() * width,
         Math.random() * height,
-        glowColor
-      )
+        glowColor,
+      ),
     );
     particlesInitialized.current = true;
   }, [particleCount, glowColor]);
@@ -149,7 +156,7 @@ const ParticleCard = ({
         gsap.fromTo(
           clone,
           { scale: 0, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" }
+          { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" },
         );
 
         gsap.to(clone, {
@@ -269,7 +276,7 @@ const ParticleCard = ({
         Math.hypot(x, y),
         Math.hypot(x - rect.width, y),
         Math.hypot(x, y - rect.height),
-        Math.hypot(x - rect.width, y - rect.height)
+        Math.hypot(x - rect.width, y - rect.height),
       );
 
       const ripple = document.createElement("div");
@@ -299,7 +306,7 @@ const ParticleCard = ({
           duration: 0.8,
           ease: "power2.out",
           onComplete: () => ripple.remove(),
-        }
+        },
       );
     };
 
@@ -431,7 +438,7 @@ const GlobalSpotlight = ({
           e.clientX,
           e.clientY,
           glowIntensity,
-          spotlightRadius
+          spotlightRadius,
         );
       });
 
@@ -446,8 +453,8 @@ const GlobalSpotlight = ({
         minDistance <= proximity
           ? 0.8
           : minDistance <= fadeDistance
-          ? ((fadeDistance - minDistance) / (fadeDistance - proximity)) * 0.8
-          : 0;
+            ? ((fadeDistance - minDistance) / (fadeDistance - proximity)) * 0.8
+            : 0;
 
       gsap.to(spotlightRef.current, {
         opacity: targetOpacity,
@@ -653,7 +660,7 @@ const MagicBento = ({
                     Math.hypot(x, y),
                     Math.hypot(x - rect.width, y),
                     Math.hypot(x, y - rect.height),
-                    Math.hypot(x - rect.width, y - rect.height)
+                    Math.hypot(x - rect.width, y - rect.height),
                   );
 
                   const ripple = document.createElement("div");
@@ -683,7 +690,7 @@ const MagicBento = ({
                       duration: 0.8,
                       ease: "power2.out",
                       onComplete: () => ripple.remove(),
-                    }
+                    },
                   );
                 };
 

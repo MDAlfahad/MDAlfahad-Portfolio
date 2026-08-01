@@ -3,7 +3,6 @@ import { Element } from "react-scroll";
 import Image from "../assets/about-image.jpeg";
 import { ScrollVelocity } from "../animation/ScrollVelocity";
 
-
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -43,12 +42,12 @@ const About = () => {
         className="grid md:grid-cols-2 gap-10 md:gap-20 w-full max-w-6xl mx-auto px-6 lg:px-8 md:mt-16 items-center"
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible" 
+        whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
           variants={itemVariants}
-          className="flex justify-center group overflow-hidden" 
+          className="flex justify-center group overflow-hidden"
         >
           <img
             className="rounded-xl w-full max-w-md object-cover transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-green-300/50"
@@ -71,9 +70,8 @@ const About = () => {
             I'm Available For
             <br />
             <span className="text-green-500">
-              Web, IoT, & UI Design
+              Web Development, Web Designing, & UI Design
             </span>{" "}
-            Projects
           </motion.h1>
           <motion.p
             variants={itemVariants}
@@ -91,7 +89,7 @@ const About = () => {
 
           <motion.div variants={itemVariants} className="mt-8">
             <Link
-              to="contact" 
+              to="contact"
               smooth={true}
               duration={500}
               className="group inline-flex items-center gap-3 px-6 py-3 border-2 border-green-500 bg-green-500 text-white font-bold rounded-full transition-all duration-300 ease-in-out hover:bg-transparent hover:text-green-500 shadow-lg hover:shadow-green-500/30"

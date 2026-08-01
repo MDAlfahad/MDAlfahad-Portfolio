@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 
-
-
+::-webkit-scrollbar{
+  display: none;
+}
 
 body{
   color: black;
 }
+
 
 /* rotating text  */
 .text-rotate {
@@ -113,7 +115,6 @@ body{
   min-height: 200px;
   width: 100%;
   max-width: 100%;
-  padding: 1.25em;
   border-radius: 20px;
   border: 1px solid var(--border-color);
   background: var(--background-dark);
@@ -141,15 +142,24 @@ body{
 
 .card__header {
   gap: 0.75em;
+  margin: 1rem;
   justify-content: space-between;
 }
 
 .card__content {
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem 1rem;
+  backdrop-filter: blur(10px);
 }
 
 .card__label {
   font-size: 16px;
+  color: black;
+  background: rgba(225, 225,255, 0.8);
+  font-weight: 500;
+  padding: .2rem;
+  border-radius: .3rem;
 }
 
 .card__title,
@@ -162,10 +172,14 @@ body{
   font-weight: 400;
   font-size: 16px;
   margin: 0 0 0.25em;
+  max-width: 100px;
+  text-align: center;
+  border-radius: .3rem;
 }
 
 .card__description {
   font-size: 12px;
+  font-weight: 400;
   line-height: 1.2;
   opacity: 0.9;
 }
